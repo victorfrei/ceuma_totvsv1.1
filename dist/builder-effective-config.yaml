@@ -1,9 +1,0 @@
-directories:
-  output: dist
-  buildResources: build
-appId: com.electron.totvsceuma
-productName: Totvs Ceuma
-win:
-  target: nsis
-  icon: ./public/logo.png
-electronVersion: 13.1.0
