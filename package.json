@@ -1,11 +1,14 @@
 {
-  "name": "electron-quick-start",
+  "name": "totvs_ceuma",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "Um aplicativo do totvs ceuma",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
+  "postinstall": "electron-builder install-app-deps",
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
     "Electron",
@@ -14,9 +17,20 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
+  "build": {
+    "appId": "com.electron.totvsceuma",
+    "productName":"Totvs Ceuma",
+    "win":{
+      "target":"nsis",
+      "icon":"./public/logo.png"
+
+    }
+  },
+  "author": "Victor Freire",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^13.0.1"
-  }
+    "electron": "^13.0.1",
+    "electron-builder": "^22.10.5"
+  },
+  "dependencies": {}
 }

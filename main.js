@@ -3,20 +3,22 @@ const {app, BrowserWindow} = require('electron')
 const path = require('path')
 
 function createWindow () {
-  // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 900,
+    height: 700,
+    autoHideMenuBar:true,
+    icon:'./public/logo.png',
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+      devTools:false,
+      javascript:true,
+      nodeIntegration:true,
+      
     }
   })
 
-  // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
 
-  // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.loadURL('https://portaldoaluno.grupoceuma.com.br/FrameHTML/web/app/edu/PortalEducacional/login/?redirect=main')
+  
 }
 
 // This method will be called when Electron has finished
